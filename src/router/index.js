@@ -12,25 +12,22 @@ const routes = [
     component: () => import(/* webpackChunkName: "cartPage" */ '../views/CartPage.vue'),
   },
   {
-    path: '/about',
-    name: 'About',
-    component: () => import(/* webpackChunkName: "aboutPage" */ '../views/AboutPage.vue'),
-  },
-  {
     path: '/products/:id',
     name: 'Products',
     component: () => import(/* webpackChunkName: "productDetails" */ '../views/ProductDetails.vue'),
   },
   {
-    path: '/unstop',
-    name: 'Unstop',
-    component: () => import(/* webpackChunkName: "UnstopPage" */ '../views/UnStopPage.vue'),
-  },
+    path: '/:pathMatch(.*)*',
+    redirect: '/'
+  }
 ];
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes,
+  scrollBehavior() {
+    return { top: 0 };
+  }
 });
 
 export default router;
