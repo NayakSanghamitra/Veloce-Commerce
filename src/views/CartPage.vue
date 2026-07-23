@@ -105,7 +105,7 @@
             Proceed to Checkout
           </v-btn>
         </v-card>
-      </col>
+      </v-col>
     </v-row>
 
     <!-- Cart Empty View -->
